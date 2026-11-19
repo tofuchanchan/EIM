@@ -3,6 +3,7 @@
 !*.html
 !*.css
 !*.js
+packages.js
 !requirements.txt
 !requirements-production.txt
 !mysql_schema.sql
