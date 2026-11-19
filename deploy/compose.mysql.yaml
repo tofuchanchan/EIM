@@ -1,0 +1,48 @@
+services:
+  app:
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - database
+
+  mysql:
+    image: mysql:8.4.13
+    restart: unless-stopped
+    stop_grace_period: 60s
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      MYSQL_ROOT_HOST: localhost
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_DATABASE: invite_studio
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_bin"]
+    secrets:
+      - mysql_root_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - database
+    healthcheck:
+      test: ["CMD", "mysqladmin", "--protocol=TCP", "--host=127.0.0.1", "--connect-timeout=3", "--silent", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 90s
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+networks:
+  database:
+    driver: bridge
+    internal: true
+
+volumes:
+  mysql-data:
+
+secrets:
+  mysql_root_password:
+    file: ./private/mysql-root-password

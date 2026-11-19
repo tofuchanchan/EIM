@@ -1,0 +1,79 @@
+/* Local CSS adaptations of DesignBookmark's Tab pill, Expand card and Loading to success.
+   Their shared lead/trail, soft, fade and pop springs are sampled for native CSS playback. */
+:root {
+  --motion-lead: cubic-bezier(.16,.87,.24,1);
+  --motion-trail: cubic-bezier(.26,.75,.3,1);
+  --motion-soft: cubic-bezier(.2,.85,.23,1);
+  --motion-fade: cubic-bezier(.2,.82,.24,1);
+  --motion-pop: cubic-bezier(.2,1.45,.44,1);
+}
+
+@supports (animation-timing-function: linear(0, .4, 1)) {
+  :root {
+    --motion-lead: linear(0,.163,.46,.723,.9,.994,1.032,1.037,1.028,1.017,1.008,1.003,1,.999,1);
+    --motion-trail: linear(0,.121,.364,.612,.81,.941,1.015,1.045,1.05,1.041,1.028,1.016,1.007,1.002,1);
+    --motion-soft: linear(0,.099,.305,.525,.712,.851,.942,.996,1.022,1.03,1.029,1.023,1.016,1.01,1);
+    --motion-fade: linear(0,.095,.292,.502,.682,.819,.912,.97,1.002,1.016,1.02,1.018,1.014,1.01,1);
+    --motion-pop: linear(0,.29,.821,1.205,1.307,1.201,1.038,.929,.907,.944,.993,1.024,1.028,1.016,1);
+  }
+}
+
+.motion-enter { animation: studio-arrive 340ms var(--motion-fade); }
+.motion-panel { animation: studio-panel 440ms var(--motion-soft); }
+.motion-success { animation: studio-confirm 530ms var(--motion-pop); }
+.motion-tick {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: studio-draw 340ms var(--motion-fade);
+}
+.motion-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: studio-spin 750ms linear infinite;
+}
+
+/* The indicator precedes positioned buttons inside their relative parent.
+   Move both edges independently so the trailing edge catches up after selection. */
+.motion-pill {
+  position: absolute;
+  pointer-events: none;
+  inset-block: var(--motion-pill-inset, 3px);
+  left: var(--motion-pill-left, 0px);
+  right: var(--motion-pill-right, 0px);
+  border-radius: inherit;
+  background: var(--motion-pill-color, #fff);
+  transition: right 380ms var(--motion-lead), left 570ms var(--motion-trail);
+}
+[data-motion-direction="left"] > .motion-pill {
+  transition: left 380ms var(--motion-lead), right 570ms var(--motion-trail);
+}
+@keyframes studio-arrive {
+  from { opacity: 0; translate: 0 6px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes studio-panel {
+  from { opacity: .2; translate: 0 11px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes studio-confirm {
+  from { opacity: 0; scale: .78; }
+  to { opacity: 1; scale: 1; }
+}
+@keyframes studio-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes studio-spin { to { rotate: 1turn; } }
+@media (prefers-reduced-motion: reduce) {
+  .motion-enter, .motion-panel, .motion-success, .motion-tick, .motion-spinner {
+    animation: none;
+  }
+  .motion-pill, [data-motion-direction="left"] > .motion-pill {
+    transition: none;
+  }
+}

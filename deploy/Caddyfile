@@ -1,0 +1,35 @@
+{
+	servers {
+		protocols h1 h2
+		max_header_size 32KB
+		timeouts {
+			read_header 10s
+			read_body 60s
+			write 120s
+			idle 60s
+		}
+	}
+}
+
+{$INVITE_DOMAIN} {
+	encode zstd gzip
+	log {
+		format json
+	}
+
+	@internal_health path /healthz
+	respond @internal_health 404
+
+	request_body {
+		max_size 16777216
+	}
+
+	reverse_proxy app:8080 {
+		header_up -Forwarded
+		header_up X-Invite-Client-IP {http.request.remote.host}
+		transport http {
+			dial_timeout 5s
+			response_header_timeout 60s
+		}
+	}
+}

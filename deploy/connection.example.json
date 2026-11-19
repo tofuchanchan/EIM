@@ -1,0 +1,10 @@
+{
+  "host": "mysql-private.example.com",
+  "port": 3306,
+  "database": "invite_studio",
+  "user": "invite_app",
+  "password": "REPLACE_USING_A_SECRET_STORE",
+  "ssl_ca": "/run/invite-studio/mysql-ca/ca.pem",
+  "ssl_verify_cert": true,
+  "ssl_verify_identity": true
+}

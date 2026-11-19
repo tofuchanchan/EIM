@@ -1,0 +1,12 @@
+**
+!*.py
+!*.html
+!*.css
+!*.js
+!requirements.txt
+!requirements-production.txt
+!mysql_schema.sql
+!seed-events.json
+!tools/
+tools/**
+!tools/migrate_mysql.py

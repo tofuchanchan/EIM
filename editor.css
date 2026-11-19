@@ -1,0 +1,181 @@
+html.ze-open{overflow:hidden}
+.ze-layer{--ze-bg:#f4f5f9;--ze-ink:#242434;--ze-muted:#656778;--ze-purple:#5340d9;position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;background:var(--ze-bg);color:var(--ze-ink);font-family:Inter,"Microsoft YaHei","PingFang SC",sans-serif;font-size:14px;line-height:1.5;outline:none;isolation:isolate;text-align:left}
+#zb-invite{z-index:1002}
+.ze-layer *,.ze-layer *::before,.ze-layer *::after{box-sizing:border-box}
+.ze-layer .ze-icon{width:18px;height:18px;flex-shrink:0;vertical-align:middle}
+.ze-layer button,.ze-layer input,.ze-layer textarea{font:inherit}
+.ze-layer button{cursor:pointer}
+.ze-layer button:focus-visible,.ze-layer input:focus-visible,.ze-layer textarea:focus-visible,.ze-layer .ze-upload:focus-within{outline:3px solid #8271ec;outline-offset:2px}
+.ze-layer button:disabled{cursor:default}
+.ze-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex:0 0 auto;min-height:68px;padding:12px clamp(16px,3.5vw,54px);border-bottom:1px solid #ddddE6;background:#fff}
+.ze-barleft,.ze-actions,.ze-tabs,.ze-bar .ze-back,.ze-canvashead>span,.ze-btn,.ze-tabs button,.ze-facts>div,.ze-content h2{display:flex;align-items:center}
+.ze-barleft{gap:22px}
+.ze-barleft i{height:18px;width:1px;background:#d3d4df}
+.ze-bar strong{font-size:16px;font-weight:700}
+.ze-actions{gap:8px}
+.ze-layer button{color:inherit;letter-spacing:normal}
+.ze-btn,.ze-back,.ze-tabs button{border:0;background:transparent;gap:7px;justify-content:center}
+.ze-bar .ze-back{padding:7px 0;gap:5px;color:#535363;white-space:nowrap}
+.ze-layer .ze-btn{border:1px solid transparent;min-height:38px;padding:8px 14px;border-radius:8px;font-weight:550;line-height:1.3;transition:background-color .15s,transform .15s}
+.ze-layer .ze-btn:active:not(:disabled){transform:scale(.98)}
+.ze-layer .ze-ghost{border-color:#d6d6e3;background:#fff}
+.ze-layer .ze-ghost:hover{background:#f4f3fa}
+.ze-layer .ze-quiet{color:#545461}
+.ze-layer .ze-primary{color:white;background:var(--ze-purple);border-color:var(--ze-purple)}
+.ze-layer .ze-primary:hover{background:#4331c5}
+.ze-layer .ze-link{background:transparent;border:0;color:#5949c3;font-size:13px;min-height:auto;padding:4px 0}
+.ze-layer .ze-full{width:100%;justify-content:center}
+.ze-work{display:grid;grid-template-columns:minmax(350px,1.48fr) minmax(340px,.92fr);flex:1;min-height:0}
+.ze-canvas,.ze-editorpanel{min-height:0;overflow:auto}
+.ze-canvas{background-color:#eeeff5;background-image:radial-gradient(#d7d8e2 1px,transparent 1px);background-size:18px 18px;padding:24px 24px 40px}
+.ze-canvashead{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#616176;margin:auto;max-width:850px}
+.ze-canvashead>span{gap:7px;font-size:12px}
+.ze-canvashead>span:first-child{font-weight:600}
+.ze-phone{width:min(100%,330px);margin:26px auto 0;background:white;border:6px solid #30303b;border-radius:40px;padding:0 3px 7px;box-shadow:0 10px 24px #29283e16;overflow:hidden}
+.ze-phonebar{height:32px;padding:0 18px;display:flex;justify-content:space-between;align-items:center;position:relative;color:#30313a;font:600 11px/1 Arial,sans-serif}
+.ze-phonebar i{position:absolute;left:50%;top:6px;transform:translateX(-50%);width:68px;height:13px;border-radius:15px;background:#30303b}
+.ze-phonebar span{font-size:9px;letter-spacing:1px}
+.ze-homebar{width:80px;height:3px;border-radius:5px;margin:5px auto 0;background:#30303b}
+.ze-mockpage{max-height:min(650px,68vh);min-height:410px;overflow:auto;scrollbar-width:thin;border-radius:5px 5px 22px 22px}
+.ze-editorpanel{background:white;border-left:1px solid #dcdde7;padding:0 clamp(22px,3.4vw,58px) 35px}
+.ze-tabs{border-bottom:1px solid #e2e2eb;gap:14px;margin-bottom:25px}
+.ze-tabs button{line-height:1.2;padding:19px 4px 16px;color:#60616e;border-bottom:2px solid transparent;font-size:14px}
+.ze-tabs button.ze-selected{border-color:var(--ze-purple);color:var(--ze-purple);font-weight:650}
+.ze-tabs button .ze-icon{width:16px}
+.ze-content h2,.ze-sheet h2,.ze-done h2,.ze-invite-info h2{font-size:24px;line-height:1.4;margin:0;color:#242432;font-weight:700;letter-spacing:-.03em}
+.ze-content h2{gap:8px}
+.ze-content h2 .ze-icon{color:var(--ze-purple);width:23px;height:23px}
+.ze-muted{margin:5px 0 20px;color:var(--ze-muted);font-size:13px}
+.ze-label{display:block;color:#393944;font-size:13px;font-weight:600}
+.ze-label b{color:#ad374f}
+.ze-group,.ze-guest-form,.ze-form-list{display:grid;gap:17px}
+.ze-label input:not([type=file]),.ze-label textarea{display:block;margin-top:7px;width:100%;border:1px solid #d6d6e1;border-radius:8px;padding:10px 11px;line-height:1.5;font-size:14px;font-weight:400;color:#282833;background:#fff;box-shadow:none}
+.ze-label input:focus,.ze-label textarea:focus{border-color:#7364d6}
+.ze-label textarea{resize:vertical}
+.ze-label input[type=date]{min-height:43px}
+.ze-upload{display:flex;gap:9px;align-items:center;justify-content:center;position:relative;border:1px dashed #b8b5ca;background:#f8f8fb;cursor:pointer;border-radius:8px;padding:17px 10px;margin-top:7px}
+.ze-upload small{font-size:10px;font-weight:400;color:var(--ze-muted)}
+.ze-upload input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.ze-form-list{gap:13px;margin:16px 0}
+.ze-formrow{border:1px solid #dfdfe8;border-radius:9px;padding:14px}
+.ze-formrow>div{display:flex;justify-content:space-between;margin-top:9px}
+.ze-switch{display:flex;align-items:center;gap:6px;font-size:13px}
+.ze-switch input{accent-color:var(--ze-purple)}
+.ze-preview-label{font-size:12px;color:#65589e;background:#eeebf8;padding:4px 9px;border-radius:5px}
+.ze-viewstage{min-height:0;flex:1;overflow:auto;padding:28px 15px 55px}
+.ze-device{background:#fff;margin:auto;max-width:398px;border:1px solid #dedee7;border-radius:16px;overflow:hidden;box-shadow:0 8px 28px #2d2c3f0b}
+.ze-poster{position:relative;overflow:hidden;width:100%}
+.ze-poster .s-poster{aspect-ratio:1.04;--art-width:91%;--art-height:84%;--art-right:-9%;--art-top:63%}
+.ze-poster .p-type{width:92%;height:100%;padding:22px 21px 18px;justify-content:flex-start}
+.ze-poster .p-type small{font-size:9px;letter-spacing:1.8px}
+.ze-poster .p-type b{font-size:34px;line-height:1.13;margin-top:11px;letter-spacing:-1.5px}
+.ze-poster .p-type footer{margin-top:auto}
+.ze-poster:has(.uploaded-cover) .s-poster{aspect-ratio:auto}
+.ze-poster .uploaded-cover{position:relative;display:block;width:100%;height:auto;object-fit:contain}
+.ze-invite-info,.ze-sheet{padding:24px 24px 18px}
+.ze-invite-info h2,.ze-sheet h2{font-size:24px;margin:6px 0 15px}
+.ze-step{color:#6b608e;font:650 10px/1.6 Inter,Arial,sans-serif;letter-spacing:.15em}
+.ze-facts{display:grid;gap:8px;color:#535365;font-size:13px}
+.ze-facts>div{gap:9px}
+.ze-facts .ze-icon{color:#7461b5;width:16px;height:16px}
+.ze-invite-info h2,.ze-description p,.ze-facts span,.ze-muted,.ze-done p{overflow-wrap:anywhere}
+.ze-description{margin-top:21px;border-top:1px solid #e9e8ee;padding-top:14px}
+.ze-description h3{font-size:15px;margin:0 0 6px;color:#333343}
+.ze-description p{font-size:13px;margin:0;color:#555566;line-height:1.8;white-space:pre-line}
+.ze-cta{background:white;padding:8px 24px 24px}
+.ze-cta .ze-btn,.ze-guest-form>.ze-btn{min-height:44px}
+.ze-cta .ze-primary{flex-direction:row-reverse}
+.ze-layer .ze-form-back{color:#5a5670;margin:12px 15px 0;padding:4px;min-height:30px;font-size:13px}
+.ze-sheet{animation:ze-enter .28s ease-out;padding-bottom:26px}
+.ze-guest-form{gap:14px}
+.ze-note{font-size:12px;color:#777586;margin:9px 0 4px}
+.ze-done{padding:55px 25px 32px;text-align:center;animation:ze-enter .3s ease-out}
+.ze-done .ze-tick{margin:0 auto 16px;background:#ece8ff;border-radius:50%;width:56px;height:56px;display:grid;place-items:center;color:var(--ze-purple)}
+.ze-tick .ze-icon{width:29px;height:29px}
+.ze-tick path{stroke-dasharray:26;stroke-dashoffset:0;animation:ze-check .44s ease-out both}
+.ze-done .ze-facts{padding:16px;border:1px solid #e0dfeb;border-radius:8px;text-align:left;margin:22px 0}
+.ze-done .ze-btn{margin:18px auto 0}
+.ze-layer .ze-mockpage input:disabled{opacity:1;background:#fcfcfd}
+.ze-mockpage button:disabled{opacity:.85}
+@keyframes ze-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ze-check{from{stroke-dashoffset:26}to{stroke-dashoffset:0}}
+@media(max-width:760px){
+  .ze-bar{padding:9px 12px;gap:7px;min-height:52px}
+  .ze-barleft{gap:5px}.ze-barleft i,.ze-barleft strong{display:none}
+  .ze-actions{gap:5px}.ze-actions .ze-btn{padding:6px 9px;min-height:33px;font-size:12px}
+  .ze-work{display:flex;flex-flow:column;overflow:auto}
+  .ze-canvas{display:none}
+  .ze-editorpanel{border:0;padding:0 18px 32px;flex:1}
+  .ze-tabs{position:sticky;top:0;background:white;z-index:1;gap:22px}
+  .ze-viewstage{padding:0;background:white}
+  .ze-device{max-width:480px;min-height:100%;border:0;border-radius:0;box-shadow:none}
+  .ze-cta,.ze-sheet{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:reduce){.ze-layer *,.ze-layer *::before,.ze-layer *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.ze-templates{margin:18px 0 22px;padding:0;border:0}.ze-templates legend,.ze-block-editor h3{font-size:15px;font-weight:650;margin:0 0 10px}.ze-templates>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.ze-template-card{border:1px solid #d9d9e6;background:#fff;text-align:left;border-radius:8px;padding:9px;min-width:0}.ze-template-card[aria-pressed=true]{border-color:#6d58d4;background:#f5f2ff;box-shadow:inset 0 0 0 1px #6d58d4}.ze-template-card strong,.ze-template-card small{display:block}.ze-template-card small{color:#636172;font-size:11px;margin-top:2px}.ze-template-card strong{font-size:13px}
+.ze-template-mini{display:block;position:relative;overflow:hidden;height:49px;margin-bottom:7px;border-radius:3px;background:#edeaf7}.ze-template-mini i,.ze-template-mini b,.ze-template-mini u{position:absolute;display:block;background:#b0a6cb}.ze-template-mini i{left:10%;top:13%;width:80%;height:40%;background:#8b7cab}.ze-template-mini b{left:10%;top:64%;width:45%;height:7%}.ze-template-mini u{left:10%;top:80%;width:72%;height:5%}.ze-mini-agenda{background:#e7eeeb}.ze-mini-agenda i{width:29%;height:66%;top:15%;background:#7a9a8a}.ze-mini-agenda b,.ze-mini-agenda u{left:46%;width:40%;height:7%;background:#9bb1a7}.ze-mini-agenda b{top:31%}.ze-mini-agenda u{top:56%}.ze-mini-editorial{background:#f0e5d8}.ze-mini-editorial i{left:10%;width:54%;height:9%;background:#93775f}.ze-mini-editorial b{top:34%;height:52%;width:45%;background:#b39174}.ze-mini-editorial u{left:61%;top:38%;width:25%;height:32%;background:#c7b09a}
+.ze-block-editor{margin-top:24px}.ze-block-row{border-top:1px solid #e5e4ed;margin-bottom:14px;padding-top:14px}.ze-block-row header,.ze-block-row header>div{display:flex;align-items:center;gap:10px}.ze-block-row header{justify-content:space-between;font-size:13px}.ze-block-row select{padding:4px;border:1px solid #d6d5e1;border-radius:5px;background:white;font:inherit}.ze-block-row label.ze-label{margin-top:9px}.ze-block-row button:disabled,.ze-layer button:disabled:not(.ze-mockpage button){opacity:.52}
+.ze-sections{padding:0 24px 18px}.ze-section{padding:16px 0;border-top:1px solid #e4e3eb}.ze-section h3{font-size:16px;margin:0 0 7px;overflow-wrap:anywhere}.ze-section p{font-size:14px;margin:0;line-height:1.8;color:#4a4859;white-space:pre-line;overflow-wrap:anywhere}.ze-section-notice{background:#f5f3fa;border:0;border-left:3px solid #a294c4;padding:12px;margin:10px 0}.ze-timetable{list-style:none;padding:0;margin:0}.ze-timetable li{display:flex;align-items:baseline;gap:10px;padding:7px 0;border-top:1px solid #efedf3;font-size:13px;overflow-wrap:anywhere}.ze-timetable time{color:#69529e;font-weight:650;flex:none;font-variant-numeric:tabular-nums}
+.ze-agenda-head{background:#25483e;color:white;padding-bottom:23px}.ze-agenda-head .ze-step{color:#c5e2d0}.ze-agenda-head h2{color:white}.ze-agenda-head .ze-facts,.ze-agenda-head .ze-facts .ze-icon{color:#e0ebe6}.ze-tpl-agenda .ze-poster .s-poster{aspect-ratio:2.6}.ze-tpl-agenda .ze-poster .p-type{width:61%;padding:13px}.ze-tpl-agenda .ze-poster .p-type b{font-size:21px;margin-top:5px}.ze-tpl-agenda .ze-poster .uploaded-cover{width:100%;height:100%;object-fit:contain;background:#eaf0ec}.ze-tpl-agenda .ze-timetable time{color:#2e6755}.ze-tpl-agenda .ze-sections{padding-top:12px}
+.ze-editorial-head{margin:20px 22px 14px;padding:12px 0 0;border-top:3px solid #4c443b}.ze-editorial-head h2{font:700 clamp(27px,4.5vw,35px)/1.18 "STSong","SimSun",serif;color:#41382d;margin:9px 0 5px;overflow-wrap:anywhere}.ze-editorial-head .ze-step{color:#7f684e}.ze-tpl-editorial{background:#faf5ed}.ze-tpl-editorial .ze-poster{width:calc(100% - 38px);margin:auto}.ze-tpl-editorial .ze-poster .s-poster{aspect-ratio:.96}.ze-tpl-editorial .ze-poster:has(.uploaded-cover) .s-poster{aspect-ratio:auto}.ze-tpl-editorial .ze-facts{font-size:12px}.ze-tpl-editorial .ze-cta{background:transparent}.ze-tpl-editorial .ze-section h3{font-family:"STSong","SimSun",serif}
+@media(max-width:760px){.ze-template-card{padding:7px}.ze-template-card small{font-size:10px}.ze-templates>div{gap:6px}}
+.ze-save-error{margin-bottom:16px;color:#9b3f2a;font-size:13px;overflow-wrap:anywhere}.ze-save-error p{margin:0 0 6px}
+.ze-tpl-agenda .ze-poster:has(.uploaded-cover) .s-poster{aspect-ratio:1.65}.ze-tpl-agenda .ze-poster .uploaded-cover{background:#dfebe6}
+.ze-public .ze-bar{min-height:48px;justify-content:center;padding:8px 16px}.ze-public .ze-bar strong{font-size:14px}.ze-public .ze-viewstage{padding-top:0}
+.ze-template-group{font-size:12px;color:#666477;margin:12px 0 6px}.ze-templates>.ze-deck-options{grid-template-columns:repeat(2,minmax(0,1fr))}.ze-mini-summit{background:#cae3d9}.ze-mini-summit i{top:14%;left:48%;width:60%;height:150%;background:#266455;border-radius:50% 45% 0 0;transform:rotate(30deg)}.ze-mini-summit b,.ze-mini-summit u{background:#347266}.ze-mini-salon{background:#efe3da}.ze-mini-salon i{left:53%;top:12%;width:29%;height:138%;transform:rotate(26deg);background:#925439}.ze-mini-salon b,.ze-mini-salon u{background:#935f48}.ze-design-link{margin-top:18px}.ze-cover-links,.ze-unique label{display:flex;gap:15px;align-items:center}.ze-identity-help{display:block;font-size:11px;font-weight:400;color:#696675;margin-top:4px}.ze-unique{margin:18px 0 24px;border:1px solid #dcdce5;border-radius:9px;padding:12px 14px}.ze-unique legend{font-size:15px;font-weight:650}.ze-unique p{margin:0 0 12px;font-size:12px;color:#58596a}.ze-unique label{justify-content:space-between;font-size:13px;margin:8px 0}.ze-unique select,.dlg-fields select{padding:7px 9px;background:white;border-radius:6px;border:1px solid #d7d7e3;color:#302e3b;max-width:79%}.dlg-fields select{max-width:none}.ze-mobile-device{display:none}
+@media(max-width:760px){.ze-mobile-device{display:flex;margin:12px 0}.ze-deck-view .ze-bar{flex-wrap:wrap}}
+.ze-editor-header{position:relative;padding:0 22px;min-height:60px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;z-index:2}
+.ze-editor-header .ze-barleft{min-width:0;gap:13px}.ze-editor-header .ze-barleft strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-.03em;font-size:14px}
+.ze-editor-header .ze-back{flex:none;font-size:13px;color:#55586b}.ze-editor-header .ze-actions{justify-content:flex-end;min-width:0}
+.ze-editor-header .ze-save-state{color:#6e7181;font-size:11px;white-space:nowrap;margin-right:5px}
+.ze-editor-nav{display:flex;gap:6px;align-items:stretch;align-self:stretch}
+.ze-editor-nav button{position:relative;border:0;background:transparent;font-size:13px;font-weight:550;white-space:nowrap;color:#626579;padding:0 14px}
+.ze-editor-nav button[aria-pressed=true]{color:#5139b7}
+.ze-editor-nav button[aria-pressed=true]::after{content:"";position:absolute;height:3px;border-radius:2px;bottom:0;left:12px;right:12px;background:#6150cc}
+.ze-editor-header .ze-btn{min-height:33px;font-size:12px;padding:7px 11px}.ze-editor-header .ze-actions .ze-icon{width:14px;height:14px}
+.ze-design-host{width:100%;flex:1 1 0;min-height:0;overflow:hidden}
+.ze-config-area{flex:1 1 0;min-height:0;width:100%;overflow:auto;padding:clamp(22px,5vh,52px) 22px 70px;background:#f6f7fa}
+.ze-config-sheet{background:white;border:1px solid #dddfe8;border-radius:12px;padding:clamp(20px,3.6vw,42px);max-width:760px;margin:0 auto}
+.ze-config-sheet h2{margin:0 0 22px;font-size:23px;letter-spacing:-.045em}.ze-config-sheet>.ze-muted{margin:-14px 0 22px}
+.ze-basic-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px 16px}.ze-basic-grid label:first-child,.ze-basic-grid label:last-child{grid-column:1/-1}
+.ze-registration-schedule{margin:24px 0 0;padding:12px 0 0;border:0;border-top:1px solid var(--line);min-width:0}
+.ze-registration-schedule legend{padding:0 8px 0 0;font-size:15px;font-weight:650}
+.ze-registration-schedule legend small{margin-left:6px;color:var(--muted);font-size:12px;font-weight:400}
+.ze-registration-schedule>p{margin:0 0 12px;font-size:12px}
+.ze-schedule-bound{margin-top:12px}
+.ze-schedule-bound strong{display:block;margin-bottom:7px;font-size:13px}
+.ze-schedule-inputs{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) auto;align-items:end;gap:8px}
+.ze-schedule-inputs .ze-label{font-size:12px}
+.ze-schedule-inputs .ze-link{align-self:end;min-height:35px;white-space:nowrap}
+.ze-config-sheet .ze-label input,.ze-config-sheet .ze-unique select{font-weight:400}.ze-editor-error{background:#fff1e9;border-bottom:1px solid #ead9cb;color:#783f27;padding:7px 18px;font-size:13px}
+@media(max-width:1050px){.ze-editor-header .ze-save-state{display:none}.ze-editor-header{padding:0 14px;gap:8px}.ze-editor-nav{gap:0}.ze-editor-nav button{padding:0 11px}}
+@media(max-width:740px){.ze-editor-header{grid-template-columns:minmax(0,1fr) auto;padding:6px 12px 0;gap:0 7px;min-height:79px}.ze-editor-header .ze-actions{grid-column:2;grid-row:1}.ze-editor-header .ze-barleft{gap:6px}.ze-editor-header .ze-barleft strong{display:block;font-size:12px}.ze-editor-nav{grid-column:1/-1;grid-row:2;min-height:35px;justify-content:center;gap:8px}.ze-editor-header .ze-actions .ze-btn{padding:5px 8px;min-height:30px}.ze-config-area{padding:18px 12px 40px}.ze-config-sheet{padding:18px 15px}.ze-editor-nav button{padding:0 13px}}
+.zc-work{display:grid;grid-template-columns:minmax(245px,.85fr) minmax(390px,1fr);flex:1;min-height:0}
+.zc-preview{min-height:0;display:flex;flex-direction:column;background-color:#f0f1f5;background-image:radial-gradient(#d4d5df 1px,transparent 1px);background-size:16px 16px}
+.zc-preview header{display:flex;align-items:center;gap:7px;padding:15px 20px;color:#646879;font-size:12px;font-weight:650}.zc-preview header svg{width:16px}
+.zc-stage{display:grid;place-items:center;min-height:0;flex:1;padding:0 18px 16px}.zc-stage .ze-device{display:flex;flex-direction:column;border:4px solid #363745;border-radius:16px;overflow:hidden}.zc-screen{position:relative;flex:1;min-height:0;pointer-events:none}.zc-stage footer{height:44px;flex:none;text-align:center;padding:12px;background:#fafaf9;font-size:12px;color:#7a7e81}
+#workspace.workspace-editor{max-width:1700px;padding:10px clamp(12px,2.4vw,32px) 20px}
+.ze-layer.ze-workbench{
+  position:relative;inset:auto;z-index:auto;isolation:auto;
+  height:max(610px,calc(100dvh - 102px));max-height:1100px;
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#f5f6fa
+}
+.ze-workbench .ze-bar{background:#f9f9fc}
+.ze-workbench .zc-work{grid-template-columns:minmax(230px,1.28fr) minmax(340px,1fr)}
+.ze-workbench .ze-config-area{min-height:0;border-left:1px solid #e0e2e9;background:#fff;padding:clamp(19px,3vw,36px)}
+.ze-workbench .ze-config-sheet{border:0;margin:0;padding:0;border-radius:0;max-width:660px}
+.ze-workbench .zc-preview{background-color:#f0f1f6;background-image:none}
+.ze-workbench .ze-editor-header{padding-inline:14px}
+.ze-workbench .ze-editor-header .ze-save-state{display:none}
+.ze-workbench .zc-stage .ze-device{border:3px solid #373844;border-radius:15px}
+.ze-design-mode .ds-stage{background-color:#f0f1f6;background-image:none}
+@media(max-width:760px){
+  #workspace.workspace-editor{padding:7px 8px 14px}
+  .ze-layer.ze-workbench{height:auto;max-height:none;min-height:calc(100dvh - 88px)}
+  .ze-workbench .zc-work{display:flex;flex-direction:column;overflow:visible}
+  .ze-workbench .zc-preview{height:clamp(370px,60dvh,570px);order:2}
+  .ze-workbench .ze-config-area{flex:auto;min-height:initial;padding:18px 14px;border-left:0}
+  .ze-workbench .zc-stage{padding-bottom:14px}
+  .ze-workbench .ze-design-host{flex:auto}
+}

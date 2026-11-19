@@ -1,0 +1,122 @@
+/* Shared control surfaces. Each keeps the workbench accent and typography. */
+.ui-field{position:relative;display:inline-flex;min-width:0;max-width:100%;vertical-align:middle;flex:0 1 auto}
+.ui-field>[data-studio-native]{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  min-height:0!important;margin:0!important;padding:0!important;opacity:0!important;pointer-events:none;
+}
+.ui-field .ui-trigger{
+  position:relative;display:flex;gap:9px;align-items:center;justify-content:space-between;
+  min-width:0;width:100%;max-width:100%;min-height:35px;padding:6px 11px;
+  border:1px solid #dce0ea;border-radius:7px;background:#fff;color:var(--ink,#202639);
+  text-align:left;font:inherit;font-size:13px;font-weight:550;line-height:1.42;
+  transition:border-color 150ms,background 150ms,transform 150ms var(--motion-fade,ease-out);
+}
+.ui-field .ui-trigger:hover:not(:disabled){border-color:#b4bccc;background:#fbfcff}
+.ui-field .ui-trigger:focus-visible{
+  outline:2px solid color-mix(in srgb,var(--accent,#5640d8) 58%,white);
+  outline-offset:2px;
+}
+.ui-field .ui-trigger[aria-expanded=true]{border-color:var(--accent,#5640d8);background:#fbfaff}
+.ui-field .ui-trigger:active:not(:disabled){transform:scale(.985)}
+.ui-field .ui-trigger:disabled{opacity:.55;cursor:not-allowed;background:#f2f4f8}
+.ui-value{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ui-trigger-icon{display:grid;place-items:center;flex:none;width:17px;height:17px;color:#646d83}
+.ui-field-select .ui-trigger-icon{transition:transform 200ms var(--motion-soft,ease-out)}
+.ui-field-select [aria-expanded=true] .ui-trigger-icon{transform:rotate(180deg)}
+.ui-trigger-icon.ui-current-color{border:1px solid #a4adbd;border-radius:4px;width:16px;height:16px;background:var(--swatch)}
+.ze-label .ui-field{display:flex;margin-top:7px}
+.ze-label .ui-trigger{min-height:42px}
+.ds-field>.ui-field,.ds-field label>.ui-field{display:flex;width:100%}
+.ds-field .ui-trigger{min-height:33px;padding:5px 8px;font-size:12px}
+.dc-select .ui-field{min-width:min(210px,50vw)}
+.dc-settings .ui-field{display:flex}
+.ze-unique .ui-field{width:min(220px,68%)}
+.gallery-compare .ui-field{min-width:155px}
+
+.ui-popover{
+  position:fixed;z-index:2140;inset:auto;margin:0;box-sizing:border-box;
+  padding:5px;border:1px solid #e0e3ed;border-radius:10px;background:#fff;color:#202639;
+  box-shadow:0 12px 32px #17203821,0 2px 6px #18223b12;overflow:auto;overscroll-behavior:contain;
+  font:13px/1.45 "Inter","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+  animation:ui-unfold 260ms var(--motion-soft,ease-out) both;transform-origin:top left;
+}
+.ui-popover[data-placement=above]{transform-origin:bottom left;--ui-start:4px}
+@keyframes ui-unfold{from{opacity:0;transform:translateY(var(--ui-start,-4px)) scale(.975,.94)}to{opacity:1;transform:none}}
+.ui-option-group{color:#68728a;font-size:11px;padding:6px 9px 3px;font-weight:550}
+.ui-popover .ui-option{
+  width:100%;min-height:34px;display:flex;align-items:center;gap:7px;padding:6px 9px;
+  border:0;border-radius:5px;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;
+}
+.ui-popover .ui-option:before{content:"";width:13px;height:13px;flex:none}
+.ui-popover .ui-option[aria-selected=true]{color:#432db5;font-weight:650}
+.ui-popover .ui-option[aria-selected=true]:before{
+  width:7px;height:4px;border:solid currentColor;border-width:0 0 2px 2px;transform:rotate(-45deg);
+  margin:0 3px 2px;
+}
+.ui-popover .ui-option.ui-highlight,.ui-popover .ui-option:hover:not(:disabled){background:#f2effe}
+.ui-popover .ui-option:disabled{color:#a1a7b6;cursor:default}
+.ui-popover[role=dialog]{padding:10px}
+.ui-calendar-bar,.ui-picker-footer{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.ui-calendar-bar{margin-bottom:7px}
+.ui-calendar-bar strong{font-size:13px}
+.ui-action{
+  border:0;border-radius:6px;padding:0 8px;min-height:31px;background:#f2f4f8;color:#293147;
+  font:inherit;cursor:pointer;
+}
+.ui-action:hover:not(:disabled){background:#eeebfc;color:#3526a2}
+.ui-action.primary{background:#5640d8;color:white}
+.ui-action.primary:disabled{opacity:.45;cursor:not-allowed}
+.ui-action.primary:hover:not(:disabled){background:#4933c1;color:white}
+.ui-calendar-bar .ui-action{min-width:31px;font-size:18px}
+.ui-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+.ui-calendar-grid>span{color:#6b748b;text-align:center;font-size:11px;padding:4px 0}
+.ui-calendar-grid button{background:transparent;min-height:28px;padding:0}
+.ui-calendar-grid button[aria-pressed=true]{background:#5640d8;color:#fff}
+.ui-calendar-grid button:disabled{opacity:.4}
+.ui-date-direct{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;margin-top:8px}
+.ui-picker-footer{justify-content:flex-end;margin-top:10px}
+.ui-time-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ui-time-fields label,.ui-hex{display:grid;gap:4px;font-size:12px;color:#4c586f}
+.ui-popover input{
+  width:100%;height:34px;padding:5px 8px;border:1px solid #dce0ea;border-radius:6px;
+  color:#202639;background:#fff;font:inherit;
+}
+.ui-colors{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin:2px 0 12px}
+.ui-color-chip{font-size:0;aspect-ratio:1;border:1px solid #ccd2e1;border-radius:5px;background:var(--swatch);cursor:pointer}
+.ui-color-chip[aria-pressed=true]{outline:2px solid #5640d8;outline-offset:2px}
+.ui-confirm h2{margin:0;font-size:18px}
+.ui-confirm p{margin:10px 0 20px;color:var(--muted);font-size:14px}
+
+/* Native affordances that still carry input semantics. */
+#zb-editor input[type=number],.ui-popover input[type=number]{appearance:textfield}
+#zb-editor input::-webkit-inner-spin-button,.ui-popover input::-webkit-inner-spin-button{appearance:none}
+#zb-editor .ze-switch input[type=checkbox]{
+  appearance:none;display:inline-grid;place-content:center;width:16px;height:16px;border:1px solid #aab3c8;
+  border-radius:4px;background:#fff;margin:0 5px 0 0;cursor:pointer;vertical-align:middle;
+}
+#zb-editor .ze-switch input:checked{background:var(--accent);border-color:var(--accent)}
+#zb-editor .ze-switch input:checked:after{content:"";display:block;width:8px;height:5px;transform:rotate(-45deg) translateY(-1px);border:solid #fff;border-width:0 0 2px 2px}
+#zb-editor .ze-switch input:disabled{opacity:.5;cursor:default}
+.dc-scale-range input[type=range]{appearance:none;min-width:0;height:22px;background:transparent;cursor:pointer}
+.dc-scale-range input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:#e0dcf4}
+.dc-scale-range input[type=range]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;margin-top:-5px;border-radius:50%;background:#5a46c5}
+.dc-scale-range input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:#e0dcf4}
+.dc-scale-range input[type=range]::-moz-range-thumb{width:15px;height:15px;border:0;border-radius:50%;background:#5a46c5}
+.metric-info summary,.ds-bindings summary{list-style:none;display:flex;align-items:center;gap:7px}
+.metric-info summary::-webkit-details-marker,.ds-bindings summary::-webkit-details-marker{display:none}
+.metric-info summary:before,.ds-bindings summary:before{
+  content:"";height:6px;width:6px;border:solid currentColor;border-width:0 1.5px 1.5px 0;
+  transform:rotate(-45deg);transition:transform 150ms var(--motion-soft,ease-out);
+}
+.metric-info[open] summary:before,.ds-bindings[open] summary:before{transform:rotate(45deg)}
+.field-search input::-webkit-search-cancel-button{appearance:none}
+.field-search button[data-op=clear-search]{
+  flex:none;display:grid;place-items:center;width:19px;height:19px;padding:0;border:0;border-radius:4px;background:#f0f1f6;color:#626b81;
+}
+.field-search button .ico{width:12px;height:12px}
+.field-search:has(input:placeholder-shown) button[data-op=clear-search]{visibility:hidden;pointer-events:none}
+@media(pointer:coarse){.ui-popover .ui-option{min-height:40px}.ui-calendar-grid button{min-height:32px}}
+@media(prefers-reduced-motion:reduce){
+  .ui-popover{animation:none}
+  .ui-field .ui-trigger,.ui-field-select .ui-trigger-icon,.metric-info summary:before,.ds-bindings summary:before{transition:none}
+}

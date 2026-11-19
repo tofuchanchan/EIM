@@ -1,0 +1,7 @@
+{
+  "host": "mysql",
+  "port": 3306,
+  "database": "invite_studio",
+  "user": "invite_app",
+  "password": "REPLACE_USING_A_SECRET_STORE"
+}

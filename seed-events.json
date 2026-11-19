@@ -1,0 +1,51 @@
+[
+  {
+    "id": "caiyun2025",
+    "title": "中兴新云·财云系统合伙人大会",
+    "theme": "teal",
+    "status": "ended",
+    "version": 1,
+    "template": "agenda",
+    "date": "2025-02-27",
+    "time": "14:00",
+    "place": "深圳 · 南山区金融科技大厦",
+    "detail": "承办单位：深圳市中兴新云服务有限公司、中邦（深圳）数字信息服务有限公司。",
+    "blocks": [
+      {
+        "id": "schedule",
+        "type": "agenda",
+        "title": "大会议程（节选）",
+        "body": "14:00–14:30 嘉宾签到入场\n14:30–14:40 领导致欢迎词\n14:40–15:00 中邦数字分享"
+      },
+      {
+        "id": "venue",
+        "type": "notice",
+        "title": "会场地址",
+        "body": "深圳市南山区高新中区科苑大道8号金融科技大厦。原邀请函未给出具体楼层。"
+      }
+    ],
+    "fields": [
+      {
+        "key": "name",
+        "label": "联系人姓名",
+        "required": false
+      },
+      {
+        "key": "company",
+        "label": "单位",
+        "required": false
+      },
+      {
+        "key": "phone",
+        "label": "电话",
+        "required": false
+      },
+      {
+        "key": "attendees",
+        "label": "参会人数",
+        "required": false
+      }
+    ],
+    "cover": ""
+  }
+]

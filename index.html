@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8fb">
+  <title>EIM · 活动工作台</title>
+  <link rel="stylesheet" href="studio.css">
+  <link rel="stylesheet" href="posters.css">
+  <link rel="stylesheet" href="editor.css">
+  <link rel="stylesheet" href="device-cover.css">
+  <link rel="stylesheet" href="invite-layout.css">
+  <link rel="stylesheet" href="designer.css">
+  <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="ui-controls.css">
+  <script defer src="posters.js"></script>
+  <script defer src="device-cover.js"></script>
+  <script defer src="invite-layout.js"></script>
+  <script defer src="forum-media.js"></script>
+  <script defer src="forum-designs.js"></script>
+  <script defer src="designer.js"></script>
+  <script defer src="editor.js"></script>
+  <script defer src="event-data.js"></script>
+  <script defer src="ui-controls.js"></script>
+  <script defer src="studio.js"></script>
+</head>
+<body>
+  <header class="topbar" hidden>
+    <div class="bar-inner">
+      <a class="brand" href="#home" aria-label="EIM 工作台"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="1" y="1" width="38" height="38" rx="11" fill="#5841df"/><path d="m7.5 16.5 10 3.5 13-10-8.2 19.8-4.1-7.4-6.2 4.3 1.1-7.1Z" fill="#fff"/><path d="m13.1 19.6 17.4-9.7-12.3 12.5-6.2 4.3Z" fill="#d9d0ff"/></svg><b>EIM</b></a>
+      <nav aria-label="主导航"><button data-nav="home">活动工作台</button><button data-nav="records">活动数据</button><button data-nav="members" hidden>成员管理</button></nav>
+      <div class="identity"></div>
+    </div>
+  </header>
+  <main id="workspace"></main>
+  <div id="modal-host"></div>
+  <div id="studio-toast" role="status"></div>
+</body>
+</html>

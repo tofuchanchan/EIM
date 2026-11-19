@@ -1,0 +1,28 @@
+.poster-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  container-type: size;
+}
+
+.poster-art__object {
+  display: block;
+  position: absolute;
+  top: var(--art-top, 49%);
+  right: var(--art-right, -7%);
+  width: var(--art-width, 67%);
+  height: var(--art-height, 140%);
+  object-fit: contain;
+  transform: translateY(-50%);
+}
+
+@container (max-aspect-ratio: 1/1) {
+  .poster-art__object {
+    top: var(--art-top, 56%);
+    right: var(--art-right, -11%);
+    width: var(--art-width, 103%);
+    height: var(--art-height, 67%);
+  }
+}

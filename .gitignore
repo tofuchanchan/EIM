@@ -1,0 +1,14 @@
+/data/
+/.venv/
+/.runtime/
+/tmp/
+/.env
+/.env.*
+!/.env.example
+/deploy/.env
+/deploy/.env.*
+!/deploy/.env.example
+/deploy/private/
+/skills/invitation-package-editor.zip
+__pycache__/
+*.pyc
