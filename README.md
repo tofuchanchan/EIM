@@ -14,7 +14,7 @@
 
 ## 生产部署
 
-正式微信短链采用公网 HTTPS 入口，由 Caddy 代理到 Python 服务，业务数据写入独立的 MySQL 库。[部署配置、接入资料和验收步骤](deploy/README.md)
+首发在同一台 Linux 服务器部署 Caddy、Python 和 MySQL，业务库从空库初始化。微信通过公网 HTTPS 短链访问邀请函。[部署配置、空库初始化和验收步骤](deploy/README.md)
 
 ## 在其他电脑上运行服务
 
@@ -41,17 +41,6 @@ py -3 -m venv .venv
 ```powershell
 .\.venv\Scripts\python.exe server.py user-add --username colleague --data-dir .\data
 ```
-
-### 从旧版 SQLite 迁入
-
-冻结旧服务写入并用 SQLite Backup API 制作一致性快照，保留原库。将维护连接指向专用空库，替换下面的快照路径：
-
-```powershell
-.\.venv\Scripts\python.exe tools/migrate_mysql.py --config .\data\mysql-private\maintenance.json --sqlite <SQLite快照路径>
-.\.venv\Scripts\python.exe tools/migrate_mysql.py --config .\data\mysql-private\connection.json --sqlite <SQLite快照路径> --verify-only
-```
-
-账号、会话、草稿、发布快照、报名时的字段及答案、去重标识均随业务表迁入；原记录的显示顺序按原 rowid 保留。数据写入、逐表行数及 SHA-256 校验和迁移标记在同一事务完成。重复执行相同快照只进行核对，目标数据产生变化时会提示差异。原 `studio.sqlite3` 和切换快照供回退使用；恢复旧系统前需处理切换后已写入 MySQL 的数据。
 
 默认地址仅供本机访问。团队接入同一台服务器时，应通过同一个服务地址打开工作台。对外分享的邀请函和后台账号应使用 HTTPS。服务的前台启动命令如下，监听地址和数据目录可按实际部署设置：
 
@@ -130,4 +119,4 @@ py -3 -m venv .venv
 .\.venv\Scripts\python.exe -B -m unittest discover -s tests -v
 ```
 
-集成测试在真实 MySQL 上为每个用例创建并清理一个随机 `inviteqa_` 前缀的独立库。项目专用实例已生成测试账号配置 `data/mysql-private/test.json`；也可通过 `INVITE_TEST_MYSQL_CONFIG` 指向仅能管理该前缀的测试账号配置。未配置测试库时，数据库集成用例显示为跳过。SQLite 仅用于旧库迁移和迁移测试。ZIP 互通测试还需要 Node.js。设置 `RUN_BROWSER_TESTS=1` 并提供 Playwright 模块及本机 Edge 后，同一命令会运行完整浏览器流程；`PLAYWRIGHT_MODULE` 可指定 Playwright 目录。
+集成测试在 MySQL 上为每个用例创建并清理一个随机 `inviteqa_` 前缀的独立库。项目专用实例已生成测试账号配置 `data/mysql-private/test.json`。也可通过 `INVITE_TEST_MYSQL_CONFIG` 指向仅能管理该前缀的测试账号配置。未配置测试库时，数据库集成用例显示为跳过。ZIP 互通测试还需要 Node.js。设置 `RUN_BROWSER_TESTS=1` 并提供 Playwright 模块及本机 Edge 后，同一命令会运行完整浏览器流程。可通过 `PLAYWRIGHT_MODULE` 指定 Playwright 目录。
